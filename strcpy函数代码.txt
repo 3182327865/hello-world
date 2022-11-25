@@ -4,23 +4,22 @@ int len;
 char* StrCpy(char* src)
 {
 	len = 0;
-	for (; src[len] != '\0'; ++len)
-		;
+	for (; src[len] != '\0'; ++len);
 	char* p = (char*)malloc((len + 1) * sizeof(char));
+	char* q = p;
 	for (int i = 0; i < len; ++i)
 		p[i] = src[i];
-	p[len] = '\0';
-	return p;
+     q[len] = '\0';
+
+	return q;
 }
 int main()
 {
-	ios::sync_with_stdio(false);
-	cin.tie(0);
-	char c[] = "abc";
-	char* cc = StrCpy(c);
+	char a[] = "hello";
+	char* b = StrCpy(a);
 	for (int i = 0; i < len; ++i)
 	{
-		cout << cc[i];
+		cout << b[i];
 	}
 	return 0;
 }
